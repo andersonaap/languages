@@ -9,8 +9,9 @@ $(document).ready(function () {
             var texto = $("#texto").val();
             $("#texto").val("");
 
-            // incluirItemComTextoSimples(texto);
-            incluirItemUsandoJQueryTemplate(texto);
+            incluirItemComStringHtml(texto);
+            // ou 
+            // incluirItemUsandoJQueryTemplate(texto);
 
             $("#lista input:last").click(function() {
                 $(this).parent().children("label").toggleClass("marcado", this.checked);
@@ -29,6 +30,4 @@ var incluirItemUsandoJQueryTemplate = function (texto) {
     var template = $.template("#itemTempl");
     var dados = { "Texto" : texto };  
     $.tmpl(template, dados).appendTo("#lista");
-    // ou
-    //$("#lista").append($.tmpl(template, dados));
 }
