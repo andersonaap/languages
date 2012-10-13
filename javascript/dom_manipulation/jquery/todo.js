@@ -1,8 +1,6 @@
 
 $(document).ready(function () {
 
-    console.log("ready");
-
     $("#texto").keyup(function (evento) {
         if(evento.which == 13) { // ou evento.keyCode
             evento.preventDefault();
@@ -10,12 +8,11 @@ $(document).ready(function () {
             $("#texto").val("");
             $("#lista").append('<li><label>' + texto + '</label><input type="checkbox"></li>');
 
-
             $("#lista input:last").click(function() {
-                var checked = this.checked;
-                console.log("onChecked: " + checked);
+                $(this).parent().children("label").toggleClass("marcado", this.checked);
             });
         }
     });
+    
 });
 
