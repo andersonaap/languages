@@ -1,15 +1,18 @@
 <hmtl>
     <head>
         <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script> 
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+
         <script type="text/javascript" src="./todo.js"></script>
-        <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <link rel="stylesheet" type="text/css" href="./todo.css"></link>
     </head>
     
     <body>
         <h1>TODO:</h1>
+
         <input id="texto" type="text" />
-        <ul id="lista" />
+        <ul id="lista"></ul>
+
     </body>
 
     <script id="itemTempl" type="text/x-jquery-tmpl">

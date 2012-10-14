@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     $("#texto").focus();    
 
-    $("#texto").keyup(function (evento) {
-        if(evento.which == 13) { // ou evento.keyCode
+    $("#texto").keypress(function (evento) {
+        if(evento.which === 13) { // ou evento.keyCode
             evento.preventDefault();
             var texto = $("#texto").val();
             $("#texto").val("");
@@ -18,7 +18,6 @@ $(document).ready(function () {
             });
         }
     });
-    
 });
 
 var incluirItemComStringHtml = function (texto) {
@@ -31,3 +30,4 @@ var incluirItemUsandoJQueryTemplate = function (texto) {
     var dados = { "Texto" : texto };  
     $.tmpl(template, dados).appendTo("#lista");
 }
+
