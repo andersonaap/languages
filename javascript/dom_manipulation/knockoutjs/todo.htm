@@ -1,0 +1,23 @@
+<hmtl>
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script> 
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.1.0/knockout-min.js"></script>
+
+        <script type="text/javascript" src="./todo.js"></script>
+        <link rel="stylesheet" type="text/css" href="./todo.css"></link>
+    </head>
+    
+    <body>
+        <h1>TODO:</h1>
+
+        <input id="textoKo" type="text" data-bind="value: item, valueUpdate: 'keypress'" />
+        <ul id="listaKo" data-bind="foreach: itens">
+            <li>
+                <label data-bind="text: Texto, css:{marcado: Class}"></label>
+                <input type="checkbox" data-bind="checked: Marcado" />
+            </li>
+        </ul>
+    </body>
+
+</html>
