@@ -7,22 +7,24 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 
 
+
 namespace mocks_stubs
 {
     [TestFixture]
-    public class EstadosDoPedidoTest 
+    public class EstadosDoPedidoTest
     {
         private const string Talisker = "Talisker";
         private const string HighlandPark = "Highland Park";
-        private IEstoque _estoque = new Estoque();
+        private IEstoque _estoque;
 
         [SetUp]
         public void Setup()
         {
+            _estoque = new Estoque();
             _estoque.Incluir(Talisker, 50);
             _estoque.Incluir(HighlandPark, 25);
         }
-        
+
         [Test]
         public void TestPedidoEstarPreenchidoSeHaverDisponibilidadeNoEstoque()
         {
@@ -39,6 +41,16 @@ namespace mocks_stubs
             pedido.Preencher(_estoque);
             Assert.IsFalse(pedido.EstaPreenchido());
             Assert.AreEqual(50, _estoque.ObterDisponibilidade(Talisker));
+        }
+
+        [Test]
+        public void TestPedidoEnviaEmailSeNaoHouverDisponibilidade()
+        {
+            var pedido = new Pedido(Talisker, 51);
+            IEmailService emailService = new EmailServiceStub();
+            pedido.DefinirEmailService(emailService);
+            pedido.Preencher(_estoque);
+            Assert.AreEqual(1, emailService.QuantidadeEnviada());
         }
     }
 }

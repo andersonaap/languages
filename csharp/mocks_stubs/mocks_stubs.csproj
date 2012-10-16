@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\EmailServiceStub.cs" />
+    <Compile Include="src\IEmailService.cs" />
     <Compile Include="src\InteracoesDoPedidoTest.cs" />
     <Compile Include="src\Estoque.cs" />
     <Compile Include="src\IEstoque.cs" />

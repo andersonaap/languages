@@ -7,9 +7,12 @@ namespace mocks_stubs
 {
     public class Pedido
     {
-        private string _produto;
+        private const string MensagemPedidoNaoPreenchido = "Pedido não preenchido.";
+
+        private IEmailService _emailService;
         private int _quantidade;
         private bool _preenchido;
+        private string _produto;
 
 
         public Pedido(string produto, int quantidade)
@@ -19,6 +22,11 @@ namespace mocks_stubs
             _quantidade = quantidade;
         }
 
+        public void DefinirEmailService(IEmailService emailService)
+        {
+            _emailService = emailService;
+        }
+
         public bool EstaPreenchido()
         {
             return _preenchido;
@@ -26,10 +34,15 @@ namespace mocks_stubs
 
         public void Preencher(IEstoque estoque)
         {
-            if(estoque.TemDisponibilidade(_produto,_quantidade))
+            if (estoque.TemDisponibilidade(_produto, _quantidade))
             {
                 estoque.Retirar(_produto, _quantidade);
                 _preenchido = true;
+            }
+            else 
+            {
+                if (_emailService != null)
+                    _emailService.Enviar(MensagemPedidoNaoPreenchido);
             }
         }
     }

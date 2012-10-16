@@ -49,5 +49,25 @@ namespace mocks_stubs
             //estoqueMock.VerifyAll(); // para MockBehavior.Loose
             Assert.IsFalse(pedido.EstaPreenchido());
         }
+
+        [Test]
+        public void TestPreenchimentoEnviaEmailSeNaoHouverDisponibilidade()
+        {
+            var pedido = new Pedido(Talisker, 51);
+            var estoqueMock = new Mock<IEstoque>();
+            var emailServiceMock = new Mock<IEmailService>();
+            pedido.DefinirEmailService(emailServiceMock.Object);
+
+            estoqueMock
+                .Setup(x => x.TemDisponibilidade(It.IsAny<string>(), It.IsAny<int>()))
+                .Returns(false);
+            emailServiceMock
+                .Setup(x => x.Enviar(It.IsAny<string>()));
+
+            pedido.Preencher(estoqueMock.Object);
+
+            estoqueMock.VerifyAll();
+            emailServiceMock.VerifyAll();
+        }
     }
 }
