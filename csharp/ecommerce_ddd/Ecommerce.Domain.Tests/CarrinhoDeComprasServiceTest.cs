@@ -35,6 +35,9 @@ namespace Ecommerce.Domain.Tests
 
             Assert.AreEqual(2, quantidade);
         }
+
+        //[Test]
+        //public void FinalizarPedido
     
     }
 }
