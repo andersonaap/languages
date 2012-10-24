@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarrinhoDeCompras.cs" />
+    <Compile Include="CarrinhoDeComprasService.cs" />
     <Compile Include="IProdutoRepository.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
