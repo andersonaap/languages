@@ -13,5 +13,12 @@ namespace Ecommerce.Domain
         {
             ItensDePedido = new List<ItemDePedido>();
         }
+
+        public void AdicionarProduto(Produto produto, int quantidade)
+        {
+            var item = new ItemDePedido { Produto = produto, Quantidade = quantidade }; 
+
+            ItensDePedido.Add(item);
+        }
     }
 }
