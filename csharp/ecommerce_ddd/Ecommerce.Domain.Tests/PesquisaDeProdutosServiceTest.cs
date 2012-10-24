@@ -13,7 +13,7 @@ using Ecommerce.Domain;
 namespace Ecommerce.Domain.Tests
 {
     [TestFixture]
-    public class CarrinhoDeComprasServiceTest
+    public class PesquisaDeProdutosServiceTest
     {
         private IEnumerable<Produto> produtosIniciais;
         
