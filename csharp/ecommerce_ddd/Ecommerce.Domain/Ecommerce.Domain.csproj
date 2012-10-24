@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarrinhoDeComprasService.cs" />
+    <Compile Include="ItemDePedido.cs" />
+    <Compile Include="PesquisaDeProdutosService.cs" />
     <Compile Include="IProdutoRepository.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
