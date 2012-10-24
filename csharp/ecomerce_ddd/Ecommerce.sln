@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{54E63FBC-5877-48B0-A0A7-FB89DE2881A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8FF1A81B-3F88-462E-B619-131F4DED45AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Domain", "Ecommerce.Domain\Ecommerce.Domain.csproj", "{449D07E4-A665-40A5-968F-5A1098AC1823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Domain.Tests", "Ecommerce.Domain.Tests\Ecommerce.Domain.Tests.csproj", "{FE30CC7E-809C-406F-9E42-3B81A11F9B9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{449D07E4-A665-40A5-968F-5A1098AC1823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449D07E4-A665-40A5-968F-5A1098AC1823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449D07E4-A665-40A5-968F-5A1098AC1823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449D07E4-A665-40A5-968F-5A1098AC1823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE30CC7E-809C-406F-9E42-3B81A11F9B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE30CC7E-809C-406F-9E42-3B81A11F9B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE30CC7E-809C-406F-9E42-3B81A11F9B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE30CC7E-809C-406F-9E42-3B81A11F9B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE30CC7E-809C-406F-9E42-3B81A11F9B9A} = {54E63FBC-5877-48B0-A0A7-FB89DE2881A7}
+		{449D07E4-A665-40A5-968F-5A1098AC1823} = {8FF1A81B-3F88-462E-B619-131F4DED45AA}
+	EndGlobalSection
+EndGlobal
