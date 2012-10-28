@@ -26,4 +26,3 @@ main = print
 
 -- 6857
 -- [Finished in 2.8s]
-  
