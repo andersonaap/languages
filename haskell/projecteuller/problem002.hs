@@ -8,12 +8,12 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 find the sum of the even-valued terms.
 -}
 
-fibs' fs a b n
-    | s <= n    = fibs' (fs ++ [s]) b s n
+fibs' fs n
+    | s <= n    = fibs' (s:fs) n
     | otherwise = fs
-    where s = a + b
+    where s = fs !! 0 + fs !! 1
 
-fibs n = fibs' [1, 2] 1 2 n 
+fibs n = fibs' [2, 1] n 
 
 main = print $ sum [x | x <- fibs 4000000, even x]
 
