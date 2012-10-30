@@ -26,7 +26,7 @@ nthPrime n = nthPrime' 1 2 n
             | otherwise = nthPrime' (i + 1) (nextPrime p) n
 
 main = do
-    print $ nthPrime 100
+    print $ nthPrime 10001
 
 -- [Not Finished]
 
