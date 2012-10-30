@@ -7,28 +7,8 @@ What is the 10 001st prime number?
 -}
 import Primes
 
-primes = eratosthenes 110000
-
-isPrime x = elem x $ primes
-
-nextPrime x
-    | isPrime next = next
-    | otherwise    = nextPrime next
-    where next = x + 1
-
-nthPrime n = nthPrime' 1 2 n
-    where
-        nthPrime' i p n
-            | i == n    = p
-            | otherwise = nthPrime' (i + 1) (nextPrime p) n
-
-main = do
-    print $ nthPrime 10001
+main =
+    print $ eratosthenes 110000 !! (10001 - 1)
 
 --104743
---[Finished in 18.1s]
-
-
-
--- [Not Finished]
-
+--[Finished in 1.3s]
