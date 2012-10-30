@@ -5,14 +5,11 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13,
 we can see that the 6th prime is 13.
 What is the 10 001st prime number?
 -}
+import Primes
 
-isPrime 1 = True
-isPrime x = isPrime' (x - 1) x
-    where 
-        isPrime' i x 
-            | i == 1         = True
-            | x `mod` i == 0 = False
-            | otherwise      = isPrime' (i - 1) x
+primes = eratosthenes 110000
+
+isPrime x = elem x $ primes
 
 nextPrime x
     | isPrime next = next
@@ -27,6 +24,11 @@ nthPrime n = nthPrime' 1 2 n
 
 main = do
     print $ nthPrime 10001
+
+--104743
+--[Finished in 18.1s]
+
+
 
 -- [Not Finished]
 
