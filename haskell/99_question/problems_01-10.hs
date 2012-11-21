@@ -59,7 +59,7 @@ pack = foldl f []
 -- Use the result of problem P09 to implement the so-called run-length encoding data compression method. 
 -- Consecutive duplicates of elements are encoded as lists (N E) where N is the number of duplicates of the element E. 
 
-encode xs = map f (pack xs)
+encode = map f . pack
     where f x = (head x, length x)
 
 
