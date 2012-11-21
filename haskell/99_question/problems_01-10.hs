@@ -44,7 +44,7 @@ flatten (List (x:xs)) = flatten x ++ flatten (List xs)
 compress = foldr f []
     where f x []  = [x]
           f x xs  | head xs == x  = xs
-                  | otherwise     = [x] ++ xs  
+                  | otherwise     = x:xs  
 
 -- Problem 9 
 -- Pack consecutive duplicates of list elements into sublists. 
