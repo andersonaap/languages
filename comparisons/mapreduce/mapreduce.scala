@@ -7,7 +7,7 @@ object mapreduce {
             (1 until 101)
             .filter(_ % 2 == 0)
             .map(x => x * x)
-            .reduceRight((acc, x) => acc + x )
+            .reduceRight(_ + _)
 
         println(somaDosParesAoQuadrado)
     }
