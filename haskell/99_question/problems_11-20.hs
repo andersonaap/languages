@@ -33,7 +33,18 @@ split xs n = f (xs, "")
 -- Start counting the elements with 1. 
 slice xs b e = take (e - b + 1) . drop (b - 1) $ xs  
 
+-- Problem 19 
+-- Rotate a list N places to the left. 
+-- Hint: Use the predefined functions length and (++). 
+-- *Main> rotate ['a','b','c','d','e','f','g','h'] 3
+-- "defghabc"
+-- *Main> rotate ['a','b','c','d','e','f','g','h'] (-2)
+-- "ghabcdef"
 
+rotate xs n = 
+    r ++ l
+    where p      = if n >= 0 then n else (length xs + n)  
+          (l, r) = splitAt p xs
 
 main = do
     print $ dupli [1, 2, 3]
@@ -41,4 +52,8 @@ main = do
     print $ dropEvery "abcdefghik" 3
     print $ split "abcdefghik" 3
     print $ slice ['a','b','c','d','e','f','g','h','i','k'] 3 7
+    
+    print $ rotate ['a','b','c','d','e','f','g','h'] 3
+    print $ rotate ['a','b','c','d','e','f','g','h'] (-2)
+
 
