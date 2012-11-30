@@ -37,13 +37,14 @@ slice xs b e = take (e - b + 1) . drop (b - 1) $ xs
 -- Rotate a list N places to the left. 
 rotate xs n = 
     r ++ l
-    where p      = if n >= 0 then n else (length xs + n)  
+    where p      = if n >= 0 then n else (length xs + n)
           (l, r) = splitAt p xs
 
 -- Problem 20 
 -- Remove the K'th element from a list.
-removeAt 0 (x:xs) = xs
-removeAt n (x:xs) = x:removeAt (n-1) xs
+removeAt n xs = (xs !! n, rm n xs) 
+    where rm 0 (x:xs) = xs
+          rm n (x:xs) = x:rm (n-1) xs
 
 
 
