@@ -26,12 +26,19 @@ split xs n = f (xs, "")
     where f (a1, a2) | length a1 > n = f (init a1, last a1:a2)
                      | otherwise     = (a1, a2)
 
+-- Problem 18 
+-- Extract a slice from a list. 
+-- Given two indices, i and k, the slice is the list containing the elements 
+-- between the i'th and k'th element of the original list (both limits included). 
+-- Start counting the elements with 1. 
+slice xs b e = take (e - b) . drop (b - 1) $ xs  
+
+
 
 main = do
     print $ dupli [1, 2, 3]
     print $ repli "abc" 3
     print $ dropEvery "abcdefghik" 3
     print $ split "abcdefghik" 3
-
-
+    print $ slice ['a','b','c','d','e','f','g','h','i','k'] 3 7
 
