@@ -31,7 +31,7 @@ split xs n = f (xs, "")
 -- Given two indices, i and k, the slice is the list containing the elements 
 -- between the i'th and k'th element of the original list (both limits included). 
 -- Start counting the elements with 1. 
-slice xs b e = take (e - b) . drop (b - 1) $ xs  
+slice xs b e = take (e - b + 1) . drop (b - 1) $ xs  
 
 
 
