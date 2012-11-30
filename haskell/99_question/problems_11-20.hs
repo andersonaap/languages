@@ -5,8 +5,8 @@
 
 -- Problem 14
 -- Duplicate the elements of a list.
-dupli =  foldl f []
-    where f acc x = acc ++ replicate 2 x
+dupli []     = []
+dupli (x:xs) = x:x:dupli xs
 
 -- Problem 15
 -- Replicate the elements of a list a given number of times.
