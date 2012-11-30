@@ -42,10 +42,9 @@ rotate xs n =
 
 -- Problem 20 
 -- Remove the K'th element from a list.
--- *Main> removeAt 2 "abcd"
--- ('b',"acd")
 removeAt 0 (x:xs) = xs
 removeAt n (x:xs) = x:removeAt (n-1) xs
+
 
 
 main = do
