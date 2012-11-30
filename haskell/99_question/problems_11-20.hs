@@ -11,8 +11,8 @@ dupli (x:xs) = x:x:dupli xs
 
 -- Problem 15
 -- Replicate the elements of a list a given number of times.
-repli xs qt = foldl f [] xs
-    where f acc x = acc ++ replicate qt x 
+repli []     n = []
+repli (x:xs) n = replicate n x ++ repli xs n
 
 -- Problem 16
 -- Drop every N'th element from a list.
