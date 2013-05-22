@@ -6,8 +6,8 @@
  
  
 BOOL ehLetra(const char caracter) {
-  char caracterCaixaBaixa = 0x20 | caracter;
-  if(caracterCaixaBaixa >= 'a' && caracterCaixaBaixa <= 'z')
+	char caracterCaixaBaixa = 0x20 | caracter;
+	if(caracterCaixaBaixa >= 'a' && caracterCaixaBaixa <= 'z')
 		return TRUE;
 	return FALSE;
 }
