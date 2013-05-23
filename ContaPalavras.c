@@ -41,11 +41,11 @@ int main() {
 	printf("Digite uma frase\n");
  
 	// http://stackoverflow.com/questions/6282198/reading-string-from-input-with-space-character
-	scanf("%[^\n]s", &frase); 
+	scanf("%[^\n]s", frase); 
  
 	quantidadePalavras = contarPalavras(frase);
  
-	printf("A frase tem %d palavras", quantidadePalavras);
+	printf("A frase tem %d palavras.\n", quantidadePalavras);
  
 	return 0;
 }
