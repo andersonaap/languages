@@ -13,7 +13,7 @@ int contarPalavras(const char * frase) {
 	char caracterAnterior = ' ';
 
 	while(TRUE) {
-		char caracterAtual = frase[posicaoCaracter];
+		const char caracterAtual = frase[posicaoCaracter];
 
 		if(caracterAtual == '\0')
 			break;
