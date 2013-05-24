@@ -1,28 +1,21 @@
+/* gcc ContaPalavras.c -o ContaPalavras.exe */
+
 #include <stdio.h>
 #include <ctype.h>
 
 
-#define TRUE 1
-
-
-
 int contarPalavras(const char * frase) {
-
 	int quantidadePalavras = 0;
-	int posicaoCaracter = 0;
+	int posicaoCaracter;
 	char caracterAnterior = ' ';
+	char caracterAtual;
 
-	while(TRUE) {
-		const char caracterAtual = frase[posicaoCaracter];
-
-		if(caracterAtual == '\0')
-			break;
+	for(posicaoCaracter = 0; caracterAtual = frase[posicaoCaracter], caracterAtual != '\0'; posicaoCaracter++) {
 
 		if(!isalpha(caracterAnterior) && isalpha(caracterAtual))
 			quantidadePalavras++;
 
 		caracterAnterior = caracterAtual;
-		posicaoCaracter++;
 	}
 
 	return quantidadePalavras;
@@ -34,7 +27,7 @@ int main() {
 
 	printf("Digite uma frase\n");
 
-	// http://stackoverflow.com/questions/6282198/reading-string-from-input-with-space-character
+	/* http://stackoverflow.com/questions/6282198/reading-string-from-input-with-space-character */
 	scanf("%[^\n]s", frase); 
  
 	quantidadePalavras = contarPalavras(frase);

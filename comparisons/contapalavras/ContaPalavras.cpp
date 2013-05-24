@@ -1,6 +1,8 @@
+// g++ -std=c++11 ContaPalavras.cpp -o ContaPalavras.exe
+
+#include <algorithm>
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 using namespace std;
 
@@ -20,7 +22,7 @@ int contarPalavras(const string& frase) {
 	return quantidadePalavras;
 }
 
-void main() {
+int main() {
 	cout << "Digite uma frase" << endl;
 
 	string frase;
@@ -29,4 +31,6 @@ void main() {
 	int quantidadePalavras = contarPalavras(frase);
 
 	cout << "A frase tem " << quantidadePalavras << " palavras." << endl;
+
+	return 0;
 }
