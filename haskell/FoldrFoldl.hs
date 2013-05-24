@@ -9,5 +9,7 @@ main = do
     --                     --------->
     --              (((a) ++ b) ++ c)
 
+
+
     print $ foldr1 (++) ["a", "b", "c"]
     print $ foldl1 (++) ["a", "b", "c"]
