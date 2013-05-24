@@ -1,3 +1,4 @@
+/* cl ContaPalavras.c */
 /* gcc ContaPalavras.c -o ContaPalavras.exe */
 
 #include <stdio.h>
