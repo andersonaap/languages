@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+
 
 class Program
 {
@@ -12,15 +14,10 @@ class Program
 
     private static int ContaPalavras(string frase)
     {
-        var quantidadePalavras = 0;
-        var caracterAnterior = ' ';
-        foreach (var caracterAtual in frase)
-        {
-            if (!char.IsLetter(caracterAnterior) && char.IsLetter(caracterAtual))
-                quantidadePalavras++;
-
-            caracterAnterior = caracterAtual;
-        }
-        return quantidadePalavras;
+        return 
+            frase
+                .Aggregate(" ", (acc, x) => char.IsLetter(acc.Last()) && char.IsLetter(x) ? acc : acc += x.ToString())
+                .Where(x => char.IsLetter(x))
+                .Count();
     }
 }
