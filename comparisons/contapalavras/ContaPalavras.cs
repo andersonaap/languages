@@ -14,10 +14,12 @@ class Program
 
     private static int ContaPalavras(string frase)
     {
-        return 
+        return
             frase
-                .Aggregate(" ", (acc, x) => char.IsLetter(acc.Last()) && char.IsLetter(x) ? acc : acc += x.ToString())
-                .Where(x => char.IsLetter(x))
-                .Count();
+                .Aggregate(
+                    " "
+                    , (acc, x) => char.IsLetter(acc.Last()) && char.IsLetter(x) ? acc : acc += x.ToString()
+                    , acc => acc.Count(x => char.IsLetter(x))
+                );
     }
 }
