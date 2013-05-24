@@ -1,3 +1,4 @@
+// cl /EHsc ContaPalavras.cpp
 // g++ -std=c++11 ContaPalavras.cpp -o ContaPalavras.exe
 
 #include <algorithm>
