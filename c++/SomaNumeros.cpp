@@ -1,4 +1,4 @@
-/* gcc SomaNumeros.c -o SomaNumeros.exe -ansi && ./SomaNumeros.exe */
+// g++ SomaNumeros.cpp -o SomaNumeros.exe -std=c++11 && ./SomaNumeros.exe
 
 #include <iostream>
 #include <vector>
