@@ -1,16 +1,29 @@
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>poc remove todos</title>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://ivaynberg.github.io/select2/select2-master/select2.css" rel="stylesheet"/>
+
     <style>
-        button { width: 100px; }
-        #Especialidades { height: 200px; width: 200px; }
-        </style>
-    <link href="http://ivaynberg.github.io/select2/select2-master/select2.css" rel="stylesheet" type="text/css" />
+        .select2 { width: 500px; display: block; margin-bottom: 5px; }
+    </style>
 </head>
 <body>
-    <select data-val-required="*" data-val="true" multiple="" class="select2" data-placeholder="Selecione as especialidades" name="Especialidades" id="Especialidades">
-        <option selected="" value="TODOS">TODAS</option>
+    <select multiple="" class="select2" name="TipoCredenciado" id="TipoCredenciado" data-placeholder="selecione">
+        <option value=""></option>
+        <option value="TODOS">TODOS</option>
+        <option value="CONSULTORIO MEDICO">CONSULTORIO MEDICO</option>
+        <option value="CONSULTORIO ODONTO">CONSULTORIO ODONTO</option>
+        <option value="EXAMES MEDICOS">EXAMES MEDICOS</option>
+        <option value="EXAMES ODONTO">EXAMES ODONTO</option>
+        <option value="HOSPITAIS">HOSPITAIS</option>
+        <option value="REUMATOLOGIA">PRONTO SOCORROS</option>
+    </select>
+    <select multiple="" class="select2" name="Especialidades" id="Especialidades" data-placeholder="selecione">
+        <option value=""></option>
+        <option value="TODOS">TODAS</option>
         <option value="ACUPUNTURA">ACUPUNTURA</option>
         <option value="CARDIOLOGIA">CARDIOLOGIA</option>
         <option value="FONOAUDIOLOGIA">FONOAUDIOLOGIA</option>
@@ -20,90 +33,31 @@
         <option value="UROLOGIA">UROLOGIA</option>
     </select>
 
-    <br/><button id="limparlog">limparlog</button>
-    <br/><button id="select2">select2</button><button id="unselect2">unselect2</button>
-    <br/><button id="incluir">incluir</button><button id="remover">remover</button>
-    <br/><button id="selecionar">selecionar</button><button id="deselecionar">deselecionar</button>
-    <br/><button id="val">val</button><button id="data">data</button>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js" type="text/javascript"></script>
+    <script src="http://ivaynberg.github.io/select2/select2-master/select2.js" type="text/javascript"></script>
 
-    <br/><button id="sel1">sel1</button><button id="sel2">sel2</button>
+    <script>
+        var onChangeSelect2 = function (e) {
+            var itens = $(e.currentTarget).select2("val");
 
-    <br/><button id="hide">hide</button><button id="show">show</button>
-
-
-    <ul id="log"></ul>
-
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
-<script src="http://underscorejs.org/underscore-min.js" type="text/javascript"></script>
-<script src="http://ivaynberg.github.io/select2/select2-master/select2.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-    var log = function (e) {
-        var txt = !((typeof e == "object") && (e !== null)) ? e : JSON.stringify(e);
-
-        var li = $("<li>" + txt + "</li>");
-        $("ul#log").append(li);
-        li.animate({ opacity: 1 }, 10000, 'linear', function () { li.animate({ opacity: 0 }, 2000, 'linear', function () { li.remove(); }); });
-    }
-
-    var SelecaoEspecialidades = function (e) {
-        log("data="+ e.data +"; val=" + e.val + "; add=" + e.added + "; removed=" + e.removed);
-
-        if (e) {
-            if (e.added !== undefined) {
-                if (e.added.id !== "TODOS") {
-                    log("nao. tirar o todos");
-                    log(e.val);
-                    e.val = _.filter(e.val, function (option) { return option.id !== "TODOS"; });
-                    $("#Especialidades").select2("data", e.val);
-                } else {
-                    log("sim. tirar os demais");
-                }
+            if(e && e.added && e.added.id !== "TODOS") {
+                itens = _.filter(itens, function (x) { return x !== "TODOS"; });
+                $(e.currentTarget).select2("val", itens);
+            } else if (e && e.added && e.added.id === "TODOS") {
+                itens = _.filter(itens, function (x) { return x === "TODOS"; });
+                $(e.currentTarget).select2("val", itens);
+            } else if (e && e.removed && itens.length === 0) {
+                $(e.currentTarget).select2("val", ["TODOS"]);
             }
-        }
-    };
+        };
 
+        $(document).ready(function () {
+            $(".select2").select2();
 
-    (function () {
-        $("#select2").on("click", function () {
-            $("#Especialidades").select2();
-            log("select2");
+            $(".select2").on("change", onChangeSelect2);
         });
-        $("#unselect2").on("click", function () {
-            $("#Especialidades").select2("destroy");
-            log("unselect2");
-        });
-
-
-        $("#limparlog").on("click", function () { $("#log").empty(); });
-
-        $("#val").on("click", function () { log($("#Especialidades").val()); });
-        $("#data").on("click", function () { log($("#Especialidades").data()); });
-
-        $("#sel1").on("click", function () {
-            var data = $("#Especialidades").select2("data");
-            data.push({ id: "TODOS", text: "TODAS" });
-            log(data);
-            $("#Especialidades").select2("data", data);
-        });
-        $("#sel2").on("click", function () { $("#Especialidades").val("2"); });
-
-        $("#hide").on("click", function () { $("#Especialidades").hide(); });
-        $("#show").on("click", function () { $("#Especialidades").show(); });
-
-        $("#incluir").on("click", function () {
-            $('#Especialidades').append('<option value="1">Foo1</option>');
-            $('#Especialidades').append('<option value="2">Foo2</option>');
-        });
-        $("#remover").on("click", function (e) { });
-
-        $("#Especialidades")
-            .on("change", SelecaoEspecialidades)
-            ;
-
-    })();
-
-</script>
+    </script>
 </body>
 </html>
