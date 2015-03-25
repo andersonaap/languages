@@ -47,6 +47,15 @@ namespace Testes
             Assert.IsType<TipoB>(instancia);
         }
 
+        [Fact]
+        public void deve_obter_uma_instancia_de_TipoC_e_suas_depencias_recebidas_por_construtor_ao_desejar_ITipoC()
+        {
+            var instancia = _container.GetInstance<ITipoC>();
+            Assert.IsType<TipoC>(instancia);
+            Assert.IsType<TipoD>(((TipoC)instancia).Dependencia);
+        }
+
+
         public void Dispose()
         {
             _container.Dispose();
