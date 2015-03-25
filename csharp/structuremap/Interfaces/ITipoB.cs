@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public class ITipoB
+    public interface ITipoB
     {
     }
 }

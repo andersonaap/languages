@@ -23,15 +23,13 @@ namespace Testes
         {
             _container = new Container(_ =>
             {
-                _.AddRegistry<InterfacesRegistry>();
                 _.Scan(x =>
                 {
-                    //x.Assembly("Implementacoes");
-                    //x.Assembly("Interfaces");
+                    x.Assembly("Implementacoes");
+                    x.Assembly("Interfaces");
                     x.TheCallingAssembly(); // x.Assembly("Testes"); // 
                     x.WithDefaultConventions();
                 });
-                //_.For<ITipoB>().Use<TipoB>();
             });
         }
 
