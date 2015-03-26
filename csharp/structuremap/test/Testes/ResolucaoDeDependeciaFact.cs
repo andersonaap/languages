@@ -23,12 +23,12 @@ namespace Testes
         {
             _container = new Container(_ =>
             {
-                _.Scan(x =>
+                _.Scan(scan =>
                 {
-                    x.Assembly("Implementacoes");
-                    x.Assembly("Interfaces");
-                    x.TheCallingAssembly(); // x.Assembly("Testes"); // 
-                    x.WithDefaultConventions();
+                    scan.Assembly("Implementacoes");
+                    scan.Assembly("Interfaces");
+                    scan.TheCallingAssembly();
+                    scan.WithDefaultConventions();
                 });
             });
         }
