@@ -52,7 +52,15 @@ namespace SiteMvc.DependencyResolution {
 
         public IContainer CurrentNestedContainer {
             get {
-                return (IContainer)HttpContext.Items[NestedContainerKey];
+                //
+                // https://github.com/jphamilton/Structuremap.MVC5/commit/acf628cf9b76d62ad7b433d5ae1027d09b9293b5
+                //
+                //return (IContainer)HttpContext.Items[NestedContainerKey];
+                if (HttpContext != null)
+                {
+                    return (IContainer)HttpContext.Items[NestedContainerKey];
+                }
+                return null;
             }
             set {
                 HttpContext.Items[NestedContainerKey] = value;
@@ -66,7 +74,17 @@ namespace SiteMvc.DependencyResolution {
         private HttpContextBase HttpContext {
             get {
                 var ctx = Container.TryGetInstance<HttpContextBase>();
-                return ctx ?? new HttpContextWrapper(System.Web.HttpContext.Current);
+                //
+                // https://github.com/jphamilton/Structuremap.MVC5/commit/acf628cf9b76d62ad7b433d5ae1027d09b9293b5
+                //
+                //return ctx ?? new HttpContextWrapper(System.Web.HttpContext.Current);
+                if (ctx != null)
+                {
+                    return ctx;
+                }
+                return System.Web.HttpContext.Current != null ? 
+                    new HttpContextWrapper(System.Web.HttpContext.Current) : 
+                    null;
             }
         }
 
