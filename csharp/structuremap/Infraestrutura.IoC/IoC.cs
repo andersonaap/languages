@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using StructureMap;
+using Infraestrutura.IoC.DependencyResolution;
 
 
 namespace Infraestrutura.IoC
@@ -17,13 +18,7 @@ namespace Infraestrutura.IoC
         {
             _container = new Container(_ =>
             {
-                _.Scan(scan =>
-                {
-                    scan.Assembly("Implementacoes");
-                    scan.Assembly("Interfaces");
-                    //scan.TheCallingAssembly();
-                    scan.WithDefaultConventions();
-                });
+                _.AddRegistry(new DefaultRegistry());
             });
         }
 
