@@ -12,15 +12,16 @@ namespace SiteMvc.Controllers
 {
     public class HomeController : Controller
     {
-        private ITipoC _tipoC;
+        private ITipoE _tipoE;
 
-        public HomeController(ITipoC tipoC)
+        public HomeController(ITipoE tipoE)
         {
-            _tipoC = tipoC;
+            _tipoE = tipoE;
         }
 
         public ActionResult Index()
         {
+            ViewBag.Mensagem = _tipoE.MetodoE();
             return View();
         }
     }

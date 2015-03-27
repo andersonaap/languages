@@ -43,6 +43,7 @@
     <Compile Include="TipoB.cs" />
     <Compile Include="TipoC.cs" />
     <Compile Include="TipoD.cs" />
+    <Compile Include="TipoE.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">

@@ -42,6 +42,7 @@
     <Compile Include="ITipoB.cs" />
     <Compile Include="ITipoC.cs" />
     <Compile Include="ITipoD.cs" />
+    <Compile Include="ITipoE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
