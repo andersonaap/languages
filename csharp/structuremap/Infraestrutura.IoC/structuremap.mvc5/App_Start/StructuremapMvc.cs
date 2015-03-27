@@ -17,7 +17,7 @@
 
 using Infraestrutura.IoC.App_Start;
 
-using WebActivatorEx;
+//using WebActivatorEx;
 
 //[assembly: PreApplicationStartMethod(typeof(StructuremapMvc), "Start")]
 //[assembly: ApplicationShutdownMethod(typeof(StructuremapMvc), "End")]
