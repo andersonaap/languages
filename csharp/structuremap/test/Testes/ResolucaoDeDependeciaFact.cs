@@ -4,65 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using StructureMap;
-using StructureMap.Graph;
-using StructureMap.Configuration.DSL;
 using Xunit;
 
 using Implementacoes;
+using Infraestrutura.IoC;
 using Interfaces;
 
 
 namespace Testes
 {
-    public class ResolucaoDeDependeciaFact : IDisposable
+    public class ResolucaoDeDependeciaFact
     {
-        private IContainer _container;
-
-        public ResolucaoDeDependeciaFact()
-        {
-            _container = new Container(_ =>
-            {
-                _.Scan(scan =>
-                {
-                    scan.Assembly("Implementacoes");
-                    scan.Assembly("Interfaces");
-                    scan.TheCallingAssembly();
-                    scan.WithDefaultConventions();
-                });
-            });
-        }
-
-        [Fact]
-        public void deve_obter_uma_instancia_de_TipoA_ao_desejar_ITipoA()
-        {
-            var instancia = _container.GetInstance<ITipoA>();
-            Assert.IsType<TipoA>(instancia);
-        }
-
         [Fact]
         public void deve_obter_uma_instancia_de_TipoB_ao_desejar_ITipoB()
         {
-            var instancia = _container.GetInstance<ITipoB>();
+            var instancia = IoC.ObterInstancia<ITipoB>();
             Assert.IsType<TipoB>(instancia);
         }
 
         [Fact]
         public void deve_obter_uma_instancia_de_TipoC_e_suas_depencias_recebidas_por_construtor_ao_desejar_ITipoC()
         {
-            var instancia = _container.GetInstance<ITipoC>();
+            var instancia = IoC.ObterInstancia<ITipoC>();
             Assert.IsType<TipoC>(instancia);
             Assert.IsType<TipoD>(((TipoC)instancia).Dependencia);
         }
-
-
-        public void Dispose()
-        {
-            _container.Dispose();
-        }
     }
-
-    public interface ITipoA { }
-
-    public class TipoA : ITipoA { }
 }

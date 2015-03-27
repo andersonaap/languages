@@ -33,12 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StructureMap">
-      <HintPath>..\..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap.Net4">
-      <HintPath>..\..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +64,10 @@
     <ProjectReference Include="..\..\Implementacoes\Implementacoes.csproj">
       <Project>{d74bb36d-5624-419c-8eb1-e7199c52dabb}</Project>
       <Name>Implementacoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infraestrutura.IoC\Infraestrutura.IoC.csproj">
+      <Project>{b45ccbf0-8324-4cb4-8852-0e138f406e4f}</Project>
+      <Name>Infraestrutura.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
       <Project>{3a6c3e39-9ef0-48e6-879b-dfa137d16100}</Project>

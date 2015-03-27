@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementacoes", "Implement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteMvc", "SiteMvc\SiteMvc.csproj", "{CC994DDE-0134-4547-BEB3-7E9E45E88B80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutura.IoC", "Infraestrutura.IoC\Infraestrutura.IoC.csproj", "{B45CCBF0-8324-4CB4-8852-0E138F406E4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{CC994DDE-0134-4547-BEB3-7E9E45E88B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC994DDE-0134-4547-BEB3-7E9E45E88B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC994DDE-0134-4547-BEB3-7E9E45E88B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45CCBF0-8324-4CB4-8852-0E138F406E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45CCBF0-8324-4CB4-8852-0E138F406E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45CCBF0-8324-4CB4-8852-0E138F406E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45CCBF0-8324-4CB4-8852-0E138F406E4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
