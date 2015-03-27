@@ -16,7 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace SiteMvc.DependencyResolution {
+namespace Infraestrutura.IoC.DependencyResolution {
     using StructureMap;
 	
     public static class IoC {

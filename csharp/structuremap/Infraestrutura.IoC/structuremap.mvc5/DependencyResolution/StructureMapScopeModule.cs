@@ -1,7 +1,8 @@
-namespace SiteMvc.DependencyResolution {
+namespace Infraestrutura.IoC.DependencyResolution
+{
     using System.Web;
 
-    using SiteMvc.App_Start;
+    using Infraestrutura.IoC.App_Start;
 
     using StructureMap.Web.Pipeline;
 

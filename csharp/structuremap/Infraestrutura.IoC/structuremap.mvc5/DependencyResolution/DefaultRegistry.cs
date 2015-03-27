@@ -15,7 +15,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SiteMvc.DependencyResolution {
+namespace Infraestrutura.IoC.DependencyResolution {
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
 	

@@ -15,7 +15,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SiteMvc.DependencyResolution {
+namespace Infraestrutura.IoC.DependencyResolution {
     using System;
     using System.Collections.Generic;
     using System.Linq;
