@@ -37,6 +37,8 @@ namespace Testes
         {
             var tipoE = IoC.ObterInstancia<ITipoE>();
             var controller = new HomeController(tipoE);
+            // ou
+            //var controller = IoC.ObterInstancia<HomeController>();
 
             var viewResult = controller.Index() as ViewResult;
             var obtido = (string)viewResult.ViewBag.Mensagem;
