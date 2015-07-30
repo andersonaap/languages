@@ -94,7 +94,16 @@
     <Compile Include="structuremap.mvc5\App_Start\StructuremapMvc.cs" />
     <Compile Include="structuremap.mvc5\DependencyResolution\StructureMapScopeModule.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Implementacoes\Implementacoes.csproj">
+      <Project>{d74bb36d-5624-419c-8eb1-e7199c52dabb}</Project>
+      <Name>Implementacoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{3a6c3e39-9ef0-48e6-879b-dfa137d16100}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

@@ -133,10 +133,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Implementacoes\Implementacoes.csproj">
-      <Project>{d74bb36d-5624-419c-8eb1-e7199c52dabb}</Project>
-      <Name>Implementacoes</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Infraestrutura.IoC\Infraestrutura.IoC.csproj">
       <Project>{b45ccbf0-8324-4cb4-8852-0e138f406e4f}</Project>
       <Name>Infraestrutura.IoC</Name>

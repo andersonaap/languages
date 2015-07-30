@@ -124,6 +124,7 @@ namespace Infraestrutura.IoC.DependencyResolution {
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
+            System.Diagnostics.Debug.WriteLine(string.Format("serviceType={0}&key={1}", serviceType.Name, key));
             IContainer container = (CurrentNestedContainer ?? Container);
 
             if (string.IsNullOrEmpty(key)) {

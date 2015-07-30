@@ -25,8 +25,8 @@ namespace Infraestrutura.IoC.DependencyResolution {
         public DefaultRegistry() {
             Scan(
                 scan => {
-                    scan.Assembly("Implementacoes");
-                    scan.Assembly("Interfaces");
+                    scan.AssemblyContainingType<Interfaces.Phantom>();
+                    scan.AssemblyContainingType<Implementacoes.Phantom>();
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                     scan.With(new ControllerConvention());
