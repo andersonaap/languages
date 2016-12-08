@@ -1,7 +1,7 @@
 languages
 =========
 
-samples, exercises, puzzles, studies;
+samples, exercises, puzzles, studies...
 
 
 
